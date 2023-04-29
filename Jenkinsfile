@@ -6,9 +6,9 @@ pipeline {
     }
     stages {
         stage('Build') {
-            when {
-                not { branch 'master' }
-            }
+            // when {
+            //    not { branch 'master' }
+            //}
             steps {
                 withMaven(maven:'maven-3', jdk:'java-8', mavenLocalRepo: '.repository') {
                     sh 'mvn verify'
